@@ -1,29 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Models;
 
-namespace WebAPI.Models
+namespace WebAPI.Dto
 {
-    public class User
+    public class UserDetailDto
     {
-        [Key]
         public int Id { get; set; }
 
-        [Required]
         public string Username { get; set; }
-
-        [Required]
-        public byte[] PasswordHash { get; set; }
-
-        [Required]
-        public byte[] PasswordSalt { get; set; }
 
         public string Gender { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
 
         public string KnownAs { get; set; }
 
@@ -41,12 +32,8 @@ namespace WebAPI.Models
 
         public string Country { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public string PhotoUrl { get; set; }  
 
-        public User()
-        {
-            Photos = new Collection<Photo>();
-        }
-
+        public ICollection<PhotoDetailDto> Photos { get; set; }
     }
 }

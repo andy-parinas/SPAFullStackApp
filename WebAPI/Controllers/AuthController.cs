@@ -56,6 +56,7 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto login)
         {
+            //throw new Exception("Computer says no");
 
             var user = await _repo.Login(login.Username, login.Password);
 
