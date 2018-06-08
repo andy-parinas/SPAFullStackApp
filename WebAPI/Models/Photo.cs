@@ -14,6 +14,8 @@ namespace WebAPI.Models
 
         public bool IsMain { get; set; }
 
+        public string PublicId { get; set; }
+
         //Adding the 2 properies below defines the full relationship
         //It tells the Entity Framework to use the Cascade Delete
         public User User { get; set; }

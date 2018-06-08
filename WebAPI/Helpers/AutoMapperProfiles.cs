@@ -32,6 +32,13 @@ namespace WebAPI.Helpers
                     opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
                 });
             CreateMap<Photo, PhotoDetailDto>();
+
+            CreateMap<UserUpdateDto, User>();
+
+            CreateMap<PhotoCreateDto, Photo>();
+
+            CreateMap<Photo, PhotoReturnDto>();
+
         }
     }
 }

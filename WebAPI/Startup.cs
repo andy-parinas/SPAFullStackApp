@@ -47,6 +47,8 @@ namespace WebAPI
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
 
+            services.Configure<CloudinarySetting>(Configuration.GetSection("CloudinarySettings"));
+
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

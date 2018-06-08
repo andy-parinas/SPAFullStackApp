@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Helpers;
 using WebAPI.Models;
 
 namespace WebAPI.Data
@@ -14,9 +15,15 @@ namespace WebAPI.Data
 
         Task<bool> SaveAll();
 
-        Task<IEnumerable<User>> GetUsers();
+        //Task<IEnumerable<User>> GetUsers();
+
+        Task<PageList<User>> GetUsers(UserParams userParams);
 
         Task<User> GetUser(int id);
+
+        Task<Photo> GetPhoto(int id);
+
+        Task<Photo> GetMainPhoto(int userId);
 
 
 
